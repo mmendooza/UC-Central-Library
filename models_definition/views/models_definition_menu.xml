@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!-- TODO: ADD <web_icon="models_definition,static/src/img/.. -->
+
+	<menuitem id="models_definition_root" name="Custom Models" sequence="10" >
+		<menuitem id="menu_information_unit" name="Information Unit" action="open_information_unit_tree" sequence="1"/>
+	</menuitem>
+
+
+</odoo>
