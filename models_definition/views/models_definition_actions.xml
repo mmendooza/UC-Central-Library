@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="open_information_unit_tree" model="ir.actions.act_window">
+        <field name="name">Information Unit</field>
+        <field name="res_model">information.unit</field>
+        <field name="view_id" ref="models_definition.information_unit_tree"/>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
