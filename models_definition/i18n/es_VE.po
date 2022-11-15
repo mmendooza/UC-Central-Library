@@ -67,3 +67,33 @@ msgstr "Nombre"
 #: model_terms:ir.ui.view,arch_db:models_definition.information_unit_form
 msgid "Information Unit"
 msgstr "Unidad de Información"
+
+#. module: models_definition
+#: model:ir.ui.menu,name:models_definition.menu_municipality
+msgid "municipalities"
+msgstr "Municipios"
+
+#. module: models_definition
+#: model:ir.ui.menu,name:models_definition.menu_parish
+msgid "parishes"
+msgstr "Parroquias"
+
+#. module: models_definition
+#: model:ir.ui.menu,name:models_definition.menu_state
+msgid "Fed. States"
+msgstr "Provincias"
+
+#. module: models_definition
+#: model:ir.ui.menu,name:models_definition.menu_state
+msgid "Fed. States"
+msgstr "Provincias"
+
+#. module: models_definition
+#: model:ir.ui.menu,name:models_definition.configuration_root
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: models_definition
+#: model:ir.ui.menu,name:models_definition.menu_localisation
+msgid "Localization"
+msgstr "Localización"

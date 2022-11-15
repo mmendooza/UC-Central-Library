@@ -2,8 +2,18 @@
 <odoo>
 	<!-- TODO: ADD <web_icon="models_definition,static/src/img/.. -->
 
-	<menuitem id="models_definition_root" name="Custom Models" sequence="10" >
+	<menuitem id="models_definition_root" name="Custom Models" sequence="10">
 		<menuitem id="menu_information_unit" name="Information Unit" action="open_information_unit_tree" sequence="1"/>
+
+		<!-- Configuration  -->
+		<menuitem id="configuration_root" name="Configuration" sequence="2">
+			<menuitem id="menu_localisation" name="Localization" sequence="1">
+				<menuitem id="menu_state" action="base.action_country_state" sequence="1"/>
+				<menuitem id="menu_municipality" action="territorial_pd.action_municipality" sequence="2"/>
+				<menuitem id="menu_parish" action="territorial_pd.action_parish" sequence="3" />
+			</menuitem>
+		</menuitem>
+
 	</menuitem>
 
 

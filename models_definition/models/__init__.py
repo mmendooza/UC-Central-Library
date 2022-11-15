@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from . import library_unit
+from . import information_unit
 from . import internal_user
 from . import carnet
