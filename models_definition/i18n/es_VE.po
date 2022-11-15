@@ -97,3 +97,33 @@ msgstr "Configuración"
 #: model:ir.ui.menu,name:models_definition.menu_localisation
 msgid "Localization"
 msgstr "Localización"
+
+#. module: models_definition
+#: model:ir.model.fields,field_description:models_definition.field_information_unit__code
+msgid "Code"
+msgstr "Código"
+
+#. module: models_definition
+#: model:ir.model.fields,field_description:models_definition.field_information_unit__initials
+msgid "Initials"
+msgstr "Iniciales"
+
+#. module: models_definition
+#: model:ir.model.fields,field_description:models_definition.field_information_unit__library_name
+msgid "Library name"
+msgstr "Nombre de biblioteca"
+
+#. module: models_definition
+#: model:ir.model.fields,field_description:models_definition.field_information_unit__address
+msgid "Address"
+msgstr "Dirección"
+
+#. module: models_definition
+#: model:ir.model.fields,field_description:models_definition.field_information_unit__website
+msgid "Website Link"
+msgstr "Sitio web"
+
+#. module: models_definition
+#: model:ir.model.fields,field_description:models_definition.field_information_unit__faculty_id
+msgid "Faculty"
+msgstr "Facultad"

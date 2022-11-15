@@ -6,31 +6,15 @@
         <field name="model">information.unit</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="code" />
                 <field name="name"/>
+                <field name="library_name" />
+                <!-- <field name="faculty_id" /> -->
+                <field name="initials" />
+                <field name="address" />
+                <field name="website" />
+                <field name="email" />
             </tree>
         </field>
     </record>
-
-    <record id="information_unit_form" model="ir.ui.view">
-        <field name="name">purchase.import.form</field>
-        <field name="model">information.unit</field>
-        <field name="arch" type="xml">
-            <form string="Information Unit">
-                <sheet>
-                    <div class="oe_title">
-                        <h1>
-                            <field name="name"/>
-                        </h1>
-                    </div>
-                    <group name="group_top">
-                        <group name="group_left">
-                        </group>
-                        <group name="group_right">
-                        </group>
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
-
 </odoo>
