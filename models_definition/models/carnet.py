@@ -12,9 +12,9 @@ class Carnet(models.Model):
 
     active = fields.Boolean(default=True, help="Set active to false to hide the salary advance tag without removing it.")
 
-    name = fields.Many2one(string='Usuario', comodel_name='internal.user', ondelete='restric', required=True)
-    #operator = fields.Many2one(string='Operador', comodel_name='', ondelete='restric', required=True)
-    #university_career = fields.Many2one(string='Carrera', comodel_name='', ondelete='restric', required=True)
+    name = fields.Many2one(string='Usuario', comodel_name='internal.user', ondelete='restrict', required=True)
+    #operator = fields.Many2one(string='Operador', comodel_name='', ondelete='restrict', required=True)
+    #university_career = fields.Many2one(string='Carrera', comodel_name='', ondelete='restrict', required=True)
     blocked_card = fields.Boolean(string='Bloqueado')
     #carnet_operator_code = fields.Char(related='operator.code')
     #user_type_code = fields.Char(related='name.code')
