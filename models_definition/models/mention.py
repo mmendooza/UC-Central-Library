@@ -1,6 +1,6 @@
 from odoo import models, api, fields, _
 
-class Mention(Models.Model):
+class Mention(models.Model):
     _name = 'mention'
     _description = "Mention"
 
