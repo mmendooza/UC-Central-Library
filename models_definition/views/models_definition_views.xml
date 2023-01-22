@@ -9,7 +9,7 @@
                 <field name="code" />
                 <field name="name"/>
                 <field name="library_name" />
-                <!-- <field name="faculty_id" /> -->
+                <field name="faculty_id" />
                 <field name="initials" />
                 <field name="address" />
                 <field name="website" />
