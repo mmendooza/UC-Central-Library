@@ -6,3 +6,4 @@ from . import carnet
 from . import faculty
 from . import school
 from . import mention
+from . import res_users

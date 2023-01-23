@@ -12,7 +12,7 @@ class InformationUnit(models.Model):
 
 	name = fields.Char(string='Name')
 	code = fields.Char(string="Code")
-	faculty_id = fields.Many2one(comodel_name="faculty", string="Faculty")
+	faculty_id = fields.Many2one(comodel_name="faculty", string="Faculty", ondelete="restrict")
 	library_name = fields.Char(string="Library name")
 	address = fields.Char(string="Address")
 	website = fields.Char(string="Website Link")

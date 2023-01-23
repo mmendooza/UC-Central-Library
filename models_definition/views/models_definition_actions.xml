@@ -6,4 +6,10 @@
         <field name="view_id" ref="models_definition.information_unit_tree"/>
         <field name="view_mode">tree,form</field>
     </record>
+    <record id="open_operator_tree" model="ir.actions.act_window">
+        <field name="name">Operator</field>
+        <field name="res_model">res.users</field>
+        <field name="view_id" ref="models_definition.operator_tree"/>
+        <field name="view_mode">tree,form</field>
+    </record>
 </odoo>

@@ -12,6 +12,7 @@
 				<menuitem id="menu_municipality" action="territorial_pd.action_municipality" sequence="2"/>
 				<menuitem id="menu_parish" action="territorial_pd.action_parish" sequence="3" />
 			</menuitem>
+			<menuitem id="menu_operator" name="Operator" action="open_operator_tree" sequence="2"/>
 		</menuitem>
 
 	</menuitem>

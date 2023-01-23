@@ -127,3 +127,33 @@ msgstr "Sitio web"
 #: model:ir.model.fields,field_description:models_definition.field_information_unit__faculty_id
 msgid "Faculty"
 msgstr "Facultad"
+
+#. module: models_definition
+#: model:ir.actions.act_window,name:models_definition.open_operator_tree
+#: model:ir.ui.menu,name:models_definition.menu_operator
+msgid "Operator"
+msgstr "Operador"
+
+#. module: models_definition
+#: model:ir.model.constraint,message:models_definition.constraint_res_users_code_uniq
+msgid "Operator code must be unique!"
+msgstr "El código del operador debe ser único!"
+
+#. module: models_definition
+#: model:ir.model.fields,field_description:models_definition.field_information_unit__code
+#: model:ir.model.fields,field_description:models_definition.field_res_users__code
+msgid "Code"
+msgstr "Código"
+
+#. module: models_definition
+#: model:ir.actions.act_window,name:models_definition.open_information_unit_tree
+#: model:ir.model.fields,field_description:models_definition.field_res_users__unit_id
+#: model:ir.ui.menu,name:models_definition.menu_information_unit
+msgid "Information Unit"
+msgstr "Unidad de información"
+
+
+#. module: models_definition
+#: model:ir.model.fields,field_description:models_definition.field_res_users__position
+msgid "Position"
+msgstr "Cargo"
