@@ -17,6 +17,7 @@
             </tree>
         </field>
     </record>
+
     <record id="operator_tree" model="ir.ui.view">
         <field name="name">operator.tree</field>
         <field name="model">res.users</field>
@@ -33,18 +34,128 @@
     </record>
 
     <record id="operator_form" model="ir.ui.view">
-    <field name="name">operator.form</field>
-    <field name="model">res.users</field>
-    <field name="inherit_id" ref="base.view_users_simple_form"/>
-    <field name="arch" type="xml">
-        <group name="phone_numbers" position="replace">
-            <group name="operator_fields">
-                <field name="code"/>
-                <field name="unit_id" />
-                <field name="position" />
+        <field name="name">operator.form</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_simple_form"/>
+        <field name="arch" type="xml">
+            <group name="phone_numbers" position="replace">
+                <group name="operator_fields">
+                    <field name="code"/>
+                    <field name="unit_id" />
+                    <field name="position" />
+                </group>
             </group>
-        </group>
+        </field>
+    </record>
 
-    </field>
-</record>
+    <record id="faculty_tree_view" model="ir.ui.view">
+        <field name="name">faculty.tree.view</field>
+        <field name="model">faculty</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="facu_auto"/>
+                <field name="facu_univ"/>
+                <field name="facu_codi"/>
+                <field name="facu_nomb"/>
+                <field name="facu_dire"/>
+                <field name="facu_emai"/>
+                <field name="facu_url"/>
+                <field name="facu_obse"/>
+                <field name="facu_logo"/>
+                <field name="facu_sigl"/>
+                <field name="facu_nume"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="faculty_form_view" model="ir.ui.view">
+        <field name="name">faculty.form.view</field>
+        <field name="model">faculty</field>
+        <field name="arch" type="xml">
+            <group name="faculty">
+                <field name="facu_auto"/>
+                <field name="facu_univ"/>
+                <field name="facu_codi"/>
+                <field name="facu_nomb"/>
+                <field name="facu_dire"/>
+                <field name="facu_emai"/>
+                <field name="facu_url"/>
+                <field name="facu_obse"/>
+                <field name="facu_logo"/>
+                <field name="facu_sigl"/>
+                <field name="facu_nume"/>
+            </group>
+        </field>
+    </record>
+
+    <record id="school_tree_view" model="ir.ui.view">
+        <field name="name">school.tree.view</field>
+        <field name="model">school</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="escu_auto"/>
+                <field name="escu_codi"/>
+                <field name="escu_facu"/>
+                <field name="escu_nomb"/>
+                <field name="escu_nume"/>
+                <field name="escu_dire"/>
+                <field name="escu_emai"/>
+                <field name="escu_url"/>
+                <field name="escu_cnu"/>
+                <field name="escu_obse"/>
+                <field name="escu_logo"/>
+                <field name="escu_sigl"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="school_form_view" model="ir.ui.view">
+        <field name="name">school.form.view</field>
+        <field name="model">school</field>
+        <field name="arch" type="xml">
+            <group name="school">
+                <field name="escu_auto"/>
+                <field name="escu_codi"/>
+                <field name="escu_facu"/>
+                <field name="escu_nomb"/>
+                <field name="escu_nume"/>
+                <field name="escu_dire"/>
+                <field name="escu_emai"/>
+                <field name="escu_url"/>
+                <field name="escu_cnu"/>
+                <field name="escu_obse"/>
+                <field name="escu_logo"/>
+                <field name="escu_sigl"/>
+            </group>
+        </field>
+    </record>
+
+    <record id="mention_tree_view" model="ir.ui.view">
+        <field name="name">mention.tree.view</field>
+        <field name="model">mention</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="menc_escu"/>
+                <field name="menc_codi"/>
+                <field name="menc_nomb"/>
+                <field name="menc_obse"/>
+                <field name="menc_nume"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="mention_form_view" model="ir.ui.view">
+        <field name="name">mention.form.view</field>
+        <field name="model">mention</field>
+        <field name="arch" type="xml">
+            <group name="mention">
+                <field name="menc_escu"/>
+                <field name="menc_codi"/>
+                <field name="menc_nomb"/>
+                <field name="menc_obse"/>
+                <field name="menc_nume"/>
+            </group>
+        </field>
+    </record>
+
 </odoo>

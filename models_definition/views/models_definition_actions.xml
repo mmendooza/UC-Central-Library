@@ -12,4 +12,22 @@
         <field name="view_id" ref="models_definition.operator_tree"/>
         <field name="view_mode">tree,form</field>
     </record>
+    <record id="action_faculty" model="ir.actions.act_window">
+        <field name="name">Faculty</field>
+        <field name="res_model">faculty</field>
+        <field name="view_id" ref="models_definition.faculty_tree_view"/>
+        <field name="view_mode">tree,form</field>
+    </record> 
+    <record id="action_school" model="ir.actions.act_window">
+        <field name="name">school</field>
+        <field name="res_model">school</field>
+        <field name="view_id" ref="models_definition.school_tree_view"/>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="action_mention" model="ir.actions.act_window">
+        <field name="name">Mention</field>
+        <field name="res_model">mention</field>
+        <field name="view_id" ref="models_definition.mention_tree_view"/>
+        <field name="view_mode">tree,form</field>
+    </record>
 </odoo>
