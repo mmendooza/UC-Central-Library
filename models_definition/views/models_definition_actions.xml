@@ -30,4 +30,12 @@
         <field name="view_id" ref="models_definition.mention_tree_view"/>
         <field name="view_mode">tree,form</field>
     </record>
+
+    <!--Carnets-->
+    <record id="action_carnet" model="ir.actions.act_window">
+        <field name="name">Carnet</field>
+        <field name="res_model">carnet</field>
+        <field name="view_id" ref="models_definition.carnet_tree_view"/>
+        <field name="view_mode">tree,form</field>
+    </record>
 </odoo>

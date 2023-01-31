@@ -165,4 +165,85 @@
         </field>
     </record>
 
+    <!--Carnets-->
+    <record id="carnet_tree_view" model="ir.ui.view">
+        <field name="name">carnet.tree.view</field>
+        <field name="model">carnet</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="active" invisible="1" />
+                <field name="carn_unid"/>
+                <field name="carn_oper"/>
+                <field name="carn_usua"/>
+                <field name="carn_unop"/>
+                <field name="carn_tipo"/>
+                <field name="carn_facu"/>
+                <field name="carn_escu"/>
+                <field name="carn_menc"/>
+                <field name="carn_anio"/>
+                <field name="carn_secc"/>
+                <field name="carn_venc"/>
+            
+                <field name="carn_nume"/>
+                <field name="card_stat"/>
+                <field name="card_moti"/>
+                <field name="card_mont"/>
+                <field name="card_etiq"/>
+                <field name="card_etvi"/>
+                <field name="card_tiqu"/>
+                <field name="carn_loca"/>
+                <field name="carn_crea"/>
+                <field name="carn_modi"/>
+                <field name="carn_umod"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="carnet_form_view" model="ir.ui.view">
+        <field name="name">carnet.form.view</field>
+        <field name="model">carnet</field>
+        <field name="arch" type="xml">
+            <form string="Carnet">
+                <sheet>
+                    <group name="Carnet">
+                        <field name="active" invisible="1" />
+                        <group name="carnet_left">
+                            <field name="carn_unid"/>
+                            <field name="carn_oper"/>
+                            <field name="carn_usua"/>
+                            <field name="carn_unop"/>
+                            <field name="carn_tipo"/>
+                            <field name="carn_facu"/>
+                            <field name="carn_escu"/>
+                            <field name="carn_menc"/>
+                            <field name="carn_anio"/>
+                            <field name="carn_secc"/>
+                            <field name="carn_venc"/>
+                        </group>
+
+                        <group name="carnet_right">
+                            <field name="carn_nume"/>
+                            <field name="card_stat"/>
+                            <field name="card_moti"/>
+                            <field name="card_mont"/>
+                            <field name="card_etiq"/>
+                            <field name="card_etvi"/>
+                            <field name="card_tiqu"/>
+                            <field name="carn_loca"/>
+                            <field name="carn_crea"/>
+                            <field name="carn_modi"/>
+                            <field name="carn_umod"/>
+                        </group>
+                    </group>
+                </sheet>
+
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
 </odoo>

@@ -17,6 +17,7 @@
 				<menuitem id="menu_faculty" action="models_definition.action_faculty" sequence="1"/>
 				<menuitem id="menu_school" action="models_definition.action_school" sequence="2"/>
 				<menuitem id="menu_mention" action="models_definition.action_mention" sequence="3" />
+				<menuitem id="menu_carnet" action="models_definition.action_carnet" sequence="4" />
 			</menuitem>
 		</menuitem>
 

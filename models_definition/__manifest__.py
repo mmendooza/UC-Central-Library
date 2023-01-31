@@ -5,7 +5,7 @@
 	'author': "FACyT / Computer science",
 	'website': "http://www.facyt.uc.edu.ve/",
 	'category': 'Technical',
-	'depends': ['base', 'territorial_pd'],
+	'depends': ['base','mail','portal' ,'territorial_pd'],
 	'data': [
 		'security/ir.model.access.csv',
 		'views/models_definition_views.xml',
