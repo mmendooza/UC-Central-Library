@@ -48,6 +48,7 @@
         </field>
     </record>
 
+    <!--Faculty-->
     <record id="faculty_tree_view" model="ir.ui.view">
         <field name="name">faculty.tree.view</field>
         <field name="model">faculty</field>
@@ -68,29 +69,35 @@
         </field>
     </record>
 
-
     <record id="faculty_form_view" model="ir.ui.view">
         <field name="name">faculty.form.view</field>
         <field name="model">faculty</field>
         <field name="arch" type="xml">
-            <form string="Faculty">
-                <group name="faculty">
-                    <field name="facu_auto"/>
-                    <field name="facu_univ"/>
-                    <field name="facu_codi"/>
-                    <field name="facu_nomb"/>
-                    <field name="facu_dire"/>
-                    <field name="facu_emai"/>
-                    <field name="facu_url"/>
-                    <field name="facu_obse"/>
-                    <field name="facu_logo"/>
-                    <field name="facu_sigl"/>
-                    <field name="facu_nume"/>
-                </group>
+            <form string="Faultad">
+                <sheet>
+                    <group name="faculty">
+                        <group name="faculty_left">
+                            <field name="facu_nomb"/>
+                            <field name="facu_dire"/>
+                            <field name="facu_auto"/>
+                            <field name="facu_univ"/>
+                            <field name="facu_codi"/>
+                            <field name="facu_nume"/>                        
+                        </group>
+                        <group name="faculty_right">
+                            <field name="facu_emai"/>
+                            <field name="facu_url"/>
+                            <field name="facu_obse"/>
+                            <field name="facu_logo"/>
+                            <field name="facu_sigl"/>
+                        </group>
+                    </group>
+                </sheet>
             </form>
         </field>
     </record>
-
+    
+    <!--School-->
     <record id="school_tree_view" model="ir.ui.view">
         <field name="name">school.tree.view</field>
         <field name="model">school</field>
@@ -116,25 +123,32 @@
         <field name="name">school.form.view</field>
         <field name="model">school</field>
         <field name="arch" type="xml">
-            <form string="School">
-                <group name="school">
-                    <field name="escu_auto"/>
-                    <field name="escu_codi"/>
-                    <field name="escu_facu"/>
-                    <field name="escu_nomb"/>
-                    <field name="escu_nume"/>
-                    <field name="escu_dire"/>
-                    <field name="escu_emai"/>
-                    <field name="escu_url"/>
-                    <field name="escu_cnu"/>
-                    <field name="escu_obse"/>
-                    <field name="escu_logo"/>
-                    <field name="escu_sigl"/>
-                </group>
+            <form string="Escuela">
+                <sheet>
+                    <group name="school">
+                        <group name="school_left">
+                            <field name="escu_nomb"/>
+                            <field name="escu_dire"/>
+                            <field name="escu_auto"/>
+                            <field name="escu_facu"/>
+                            <field name="escu_codi"/>
+                            <field name="escu_nume"/>
+                        </group>
+                        <group name="school_right">
+                            <field name="escu_emai"/>
+                            <field name="escu_url"/>
+                            <field name="escu_cnu"/>
+                            <field name="escu_obse"/>
+                            <field name="escu_logo"/>
+                            <field name="escu_sigl"/>
+                        </group>
+                    </group>
+                </sheet>
             </form>
         </field>
     </record>
 
+    <!--Mention-->
     <record id="mention_tree_view" model="ir.ui.view">
         <field name="name">mention.tree.view</field>
         <field name="model">mention</field>
@@ -153,14 +167,20 @@
         <field name="name">mention.form.view</field>
         <field name="model">mention</field>
         <field name="arch" type="xml">
-            <form string="Mention">
-                <group name="mention">
-                    <field name="menc_escu"/>
-                    <field name="menc_codi"/>
-                    <field name="menc_nomb"/>
-                    <field name="menc_obse"/>
-                    <field name="menc_nume"/>
-                </group>
+            <form string="Mención">
+                <sheet>
+                    <group name="mention">
+                        <group name="mention_left">
+                            <field name="menc_nomb"/>
+                            <field name="menc_codi"/>
+                        <field name="menc_escu"/>
+                        </group>
+                        <group name="mention_right">
+                            <field name="menc_obse"/>
+                            <field name="menc_nume"/>
+                        </group>
+                    </group>
+                </sheet>
             </form>
         </field>
     </record>
