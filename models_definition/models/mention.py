@@ -10,3 +10,4 @@ class Mention(models.Model):
     menc_codi = fields.Char(string="Código", required=True)
     menc_nume = fields.Char(string="Número")
     menc_obse = fields.Char(string="No sé menc_obse")
+    active = fields.Boolean(default=True)

@@ -18,4 +18,3 @@ class Faculty(models.Model):
     facu_sigl = fields.Char(string="No sé facu_sigl")
     active = fields.Boolean(default=True)
 
-

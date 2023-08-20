@@ -17,3 +17,4 @@ class School(models.Model):
     escu_obse = fields.Char(string="No sé escu_obse")
     escu_logo = fields.Image(string='Logo', max_width=500, max_height=500)
     escu_sigl = fields.Char(string="No sé escu_sigl")
+    active = fields.Boolean(default=True)
