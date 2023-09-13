@@ -4,3 +4,4 @@ access_model_carnet,model_access_carnet,model_carnet,base.group_user,1,1,1,1
 access_model_faculty,model.access.faculty,model_faculty,base.group_user,1,1,1,1
 access_model_school,model.access.school,model_school,base.group_user,1,1,1,1
 access_model_mention,model.access.mention,model_mention,base.group_user,1,1,1,1
+access_model_sabi_user,model.access.sabi.user,model_sabi_user,base.group_user,1,1,1,1

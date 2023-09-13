@@ -52,4 +52,4 @@ class InternalUser(models.Model):
 	student_certificate = fields.Binary(string='Constancia de estudio')
 	worker_certificate = fields.Binary(string='Constancia de trabajo')
 	observations = fields.Text(string='Observaciones')
-	# sabi_user_id = fields.One2many(comodel_name='sabi.user', inverse_field_name='internal_user_id', string='User Tracking')
+	sabi_user_id = fields.One2many(comodel_name='sabi.user', inverse_field_name='internal_user_id', string='User Tracking')

@@ -20,7 +20,7 @@ class InternUserHistorial(models.Model):
 	usua_facu = fields.Many2one('faculty', string='Facultad')
 	usua_escu = fields.Many2one('school', string='Escuela')
 	usua_menc = fields.Many2one('mention', string='Mención')
-	usua_unid = fields.Many2one('information.unit', string='Unidad')
+	usua_unid = fields.Many2one('information.unit', string='Unidad de Información')
 	usua_sexo = fields.Selection([
 		('m', 'M'),
 		('f', 'F'),],
@@ -52,12 +52,12 @@ class InternUserHistorial(models.Model):
 	usua_umod = fields.Many2one('res.users',string='Último usuario modifica')	#TO DO: preguntar si este campo puede ser reemplazado por el de Odoo	
 	usua_modi = fields.Date(string='Última fecha que se modificó')  
 	usua_obse = fields.Char(string='Observación')
-	usua_peri = fields.Char(string='???')
+	usua_peri = fields.Char(string='usua_peri???')
 	usua_edcv = fields.Char(string='Estado civil')
-	usua_cdac = fields.Char(string='???')
-	usua_nive = fields.Char(string='???')
+	usua_cdac = fields.Char(string='usua_cdac???')
+	usua_nive = fields.Char(string='usua_nive???')
 	usua_naci = fields.Date(string='Fecha de nacimiento')
-	usua_anio = fields.Char(string='???')
+	usua_anio = fields.Char(string='usua_anio???')
 	usua_telf = fields.Char(string='Teléfono')
 	usua_dire = fields.Char(string='Dirección')
 	usua_corr = fields.Char(string='Correo')

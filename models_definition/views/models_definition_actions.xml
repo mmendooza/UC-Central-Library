@@ -48,4 +48,12 @@
         <field name="view_id" ref="models_definition.carnet_tree_view"/>
         <field name="view_mode">tree,form</field>
     </record>
+
+    <!--Usuario SABI-->
+    <record id="action_sabi_user" model="ir.actions.act_window">
+        <field name="name">Usuario SABI</field>
+        <field name="res_model">sabi.user</field>
+        <field name="view_id" ref="models_definition.sabi_user_tree_view"/>
+        <field name="view_mode">tree,form</field>
+    </record>
 </odoo>
