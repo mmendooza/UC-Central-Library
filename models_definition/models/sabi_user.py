@@ -2,11 +2,11 @@
 
 from odoo import models, fields, api
 
-class InternUserHistorial(models.Model):
+class SabiUser(models.Model):
 	_name = "sabi.user"
 	_description = "Usuario SABI"
 
-	usua_codi = fields.Integer(string='Identificador de línea', required=True) #TO DO: evaluar lo del auto incremento
+	usua_codi = fields.Integer(string='Identificador de línea') #TO DO: evaluar lo del auto incremento
 	usua_cedu = fields.Char(string='Cédula de identidad')
 	usua_nomb = fields.Char(string='Nombre y apellido')
 	usua_tipo = fields.Selection([
@@ -14,8 +14,7 @@ class InternUserHistorial(models.Model):
 		('professor', 'Docente'),
 		('administrative', 'Personal administrativo'),
 		('laborer', 'Personal obrero')],
-		string='Tipo de usuario',
-		required=True
+		string='Tipo de usuario'
 	)
 	usua_facu = fields.Many2one('faculty', string='Facultad')
 	usua_escu = fields.Many2one('school', string='Escuela')
@@ -24,8 +23,7 @@ class InternUserHistorial(models.Model):
 	usua_sexo = fields.Selection([
 		('m', 'M'),
 		('f', 'F'),],
-		string='Género',
-		required=True
+		string='Género'
 	)
 	usua_disc = fields.Selection([
 		('none', 'Ninguna'),
@@ -37,8 +35,7 @@ class InternUserHistorial(models.Model):
 		('multiple', 'Múltiple'),
 		('visual', 'Visual')],
 		string='Discapacidad',
-		default='none',
-		required=True
+		default='none'
 	)
 	usua_trab = fields.Char(string='Dirección de trabajo')
 	usua_habi = fields.Char(string='Dirección de Habitación')
@@ -46,9 +43,9 @@ class InternUserHistorial(models.Model):
 	usua_carn = fields.Many2one('carnet', string='Carnet')
 	usua_ano = fields.Integer(string='Año en curso')
 	usua_secc = fields.Char(string='Sección a la que pertence')
-	usua_foto = fields.Image(string='Fotografía referencia', max_width=500, max_height=500, required=True)
+	usua_foto = fields.Image(string='Fotografía referencia', max_width=500, max_height=500)
 	usua_ucre = fields.Many2one('res.users', string='Usuario crea registro') 	#TO DO: preguntar si este campo puede ser reemplazado por el de Odoo
-	usua_crea = fields.Date(string='Fecha de creacion')     					#TO DO: preguntar si este campo puede ser reemplazado por el de Odoo
+	usua_crea = fields.Date(string='Fecha de creación')     					#TO DO: preguntar si este campo puede ser reemplazado por el de Odoo
 	usua_umod = fields.Many2one('res.users',string='Último usuario modifica')	#TO DO: preguntar si este campo puede ser reemplazado por el de Odoo	
 	usua_modi = fields.Date(string='Última fecha que se modificó')  
 	usua_obse = fields.Char(string='Observación')
@@ -65,14 +62,13 @@ class InternUserHistorial(models.Model):
 	usua_inst = fields.Char(string='Etiqueta institución')
 	usua_etvi = fields.Char(string='Etiqueta visible en carnets')
 	usua_nada = fields.Many2one('res.country', string='Nacionalidad')
-	internal_user_id = fields.Many2one('internal.user', index=True, ondelete='cascade') # TO DO: Proponer este campo nuevo
+	internal_user_id = fields.Many2one('internal.user', index=True, ondelete='cascade', string='Usuario Interno') # TO DO: Proponer este campo nuevo
 	usua_state = fields.Selection([ # TO DO: Proponer este campo nuevo
 		('new', 'Nuevo Ingreso'),
 		('regular', 'Regular'),
 		('graduated', 'Egresado'),
 		('retired', 'Retirado'),
 		('inactive', 'Inactivo'),],
-		string='Estado',
-		required=True
+		string='Estado'
 	)
 	
