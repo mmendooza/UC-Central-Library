@@ -16,10 +16,10 @@ class SabiUser(models.Model):
 		('laborer', 'Personal obrero')],
 		string='Tipo de usuario'
 	)
-	usua_facu = fields.Char('faculty', string='Facultad')
-	usua_escu = fields.Char('school', string='Escuela')
-	usua_menc = fields.Char('mention', string='Mención')
-	usua_unid = fields.Char('information.unit', string='Unidad de Información')
+	usua_facu = fields.Char(string='Facultad')
+	usua_escu = fields.Char(string='Escuela')
+	usua_menc = fields.Char(string='Mención')
+	usua_unid = fields.Char(string='Unidad de Información')
 	usua_sexo = fields.Selection([
 		('m', 'M'),
 		('f', 'F'),],
@@ -40,13 +40,13 @@ class SabiUser(models.Model):
 	usua_trab = fields.Char(string='Dirección de trabajo')
 	usua_habi = fields.Char(string='Dirección de Habitación')
 	usua_bloq = fields.Boolean(string='Usuario bloqueado', default=False)
-	usua_carn = fields.Integer('carnet', string='Carnet')
+	usua_carn = fields.Integer(string='Carnet')
 	usua_ano = fields.Integer(string='Año en curso')
 	usua_secc = fields.Char(string='Sección a la que pertence')
 	usua_foto = fields.Image(string='Fotografía referencia', max_width=500, max_height=500)
-	usua_ucre = fields.Char('res.users', string='Usuario crea registro') 	
+	usua_ucre = fields.Char(string='Usuario crea registro') 	
 	usua_crea = fields.Date(string='Fecha de creación')     					
-	usua_umod = fields.Char('res.users',string='Último usuario modifica')		
+	usua_umod = fields.Char(string='Último usuario modifica')		
 	usua_modi = fields.Date(string='Última fecha que se modificó')  
 	usua_obse = fields.Char(string='Observación')
 	usua_peri = fields.Char(string='usua_peri???')
@@ -61,7 +61,7 @@ class SabiUser(models.Model):
 	usua_etiq = fields.Char(string='Etiqueta foránea')
 	usua_inst = fields.Char(string='Etiqueta institución')
 	usua_etvi = fields.Char(string='Etiqueta visible en carnets')
-	usua_nada = fields.Many2one('res.country', string='Nacionalidad')
+	usua_nada = fields.Char(string='Nacionalidad')
 	internal_user_id = fields.Many2one('internal.user', index=True, ondelete='cascade', string='Usuario Interno') # TO DO: Proponer este campo nuevo
 	usua_state = fields.Selection([ # TO DO: Proponer este campo nuevo
 		('new', 'Nuevo Ingreso'),
