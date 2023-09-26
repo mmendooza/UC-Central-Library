@@ -16,10 +16,10 @@ class SabiUser(models.Model):
 		('laborer', 'Personal obrero')],
 		string='Tipo de usuario'
 	)
-	usua_facu = fields.Many2one('faculty', string='Facultad')
-	usua_escu = fields.Many2one('school', string='Escuela')
-	usua_menc = fields.Many2one('mention', string='Mención')
-	usua_unid = fields.Many2one('information.unit', string='Unidad de Información')
+	usua_facu = fields.Char('faculty', string='Facultad')
+	usua_escu = fields.Char('school', string='Escuela')
+	usua_menc = fields.Char('mention', string='Mención')
+	usua_unid = fields.Char('information.unit', string='Unidad de Información')
 	usua_sexo = fields.Selection([
 		('m', 'M'),
 		('f', 'F'),],
@@ -39,14 +39,14 @@ class SabiUser(models.Model):
 	)
 	usua_trab = fields.Char(string='Dirección de trabajo')
 	usua_habi = fields.Char(string='Dirección de Habitación')
-	usua_bloq = fields.Boolean(string='Usuario bloqueado', default=False) #TO DO: preguntar si este campo puede ser booleano
-	usua_carn = fields.Many2one('carnet', string='Carnet')
+	usua_bloq = fields.Boolean(string='Usuario bloqueado', default=False)
+	usua_carn = fields.Integer('carnet', string='Carnet')
 	usua_ano = fields.Integer(string='Año en curso')
 	usua_secc = fields.Char(string='Sección a la que pertence')
 	usua_foto = fields.Image(string='Fotografía referencia', max_width=500, max_height=500)
-	usua_ucre = fields.Many2one('res.users', string='Usuario crea registro') 	#TO DO: preguntar si este campo puede ser reemplazado por el de Odoo
-	usua_crea = fields.Date(string='Fecha de creación')     					#TO DO: preguntar si este campo puede ser reemplazado por el de Odoo
-	usua_umod = fields.Many2one('res.users',string='Último usuario modifica')	#TO DO: preguntar si este campo puede ser reemplazado por el de Odoo	
+	usua_ucre = fields.Char('res.users', string='Usuario crea registro') 	
+	usua_crea = fields.Date(string='Fecha de creación')     					
+	usua_umod = fields.Char('res.users',string='Último usuario modifica')		
 	usua_modi = fields.Date(string='Última fecha que se modificó')  
 	usua_obse = fields.Char(string='Observación')
 	usua_peri = fields.Char(string='usua_peri???')
