@@ -277,20 +277,20 @@
         <field name="model">sabi.user</field>
         <field name="arch" type="xml">
             <tree string="Usuario Sabi">
-                <field name="usua_codi"/>
+                <!-- <field name="usua_codi"/> -->
                 <field name="usua_cedu"/>
                 <field name="usua_nomb"/>
-                <field name="usua_tipo"/>
+                <!-- <field name="usua_tipo"/> -->
                 <field name="usua_facu"/>
                 <field name="usua_escu"/>
                 <field name="usua_menc"/>
                 <field name="usua_unid"/>
-                <field name="usua_sexo"/>
+                <!-- <field name="usua_sexo"/>
                 <field name="usua_disc"/>
                 <field name="usua_trab"/>
-                <field name="usua_habi"/>
+                <field name="usua_habi"/> -->
                 <field name="usua_bloq"/>
-                <field name="usua_carn"/>
+                <!-- <field name="usua_carn"/>
                 <field name="usua_ano"/>
                 <field name="usua_secc"/>
                 <field name="usua_foto"/>
@@ -298,12 +298,12 @@
                 <field name="usua_crea"/>
                 <field name="usua_umod"/>
                 <field name="usua_modi"/>
-                <field name="usua_obse"/>
+                <field name="usua_obse"/> -->
                 <field name="usua_peri"/>
-                <field name="usua_edcv"/>
-                <field name="usua_cdac"/>
+                <!-- <field name="usua_edcv"/>
+                <field name="usua_cdac"/> -->
                 <field name="usua_nive"/>
-                <field name="usua_naci"/>
+                <!-- <field name="usua_naci"/>
                 <field name="usua_anio"/>
                 <field name="usua_telf"/>
                 <field name="usua_dire"/>
@@ -312,8 +312,8 @@
                 <field name="usua_inst"/>
                 <field name="usua_etvi"/>
                 <field name="usua_nada"/>
-                <field name="internal_user_id"/>
-                <field name="usua_state"/>
+                <field name="internal_user_id"/> 
+                <field name="usua_state"/>-->
             </tree>
         </field>
     </record>
