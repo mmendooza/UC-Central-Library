@@ -215,6 +215,7 @@
                 <field name="carn_crea"/>
                 <field name="carn_modi"/>
                 <field name="carn_umod"/>
+                <field name="state" />
             </tree>
         </field>
     </record>
@@ -224,6 +225,11 @@
         <field name="model">carnet</field>
         <field name="arch" type="xml">
             <form string="Carnet">
+                <header>
+                    <button name="action_activate" type="object" string="Activar" />
+                    <button name="action_deactivate" type="object" string="Desactivar" />
+                    <field name="state" widget="statusbar" />
+                </header>
                 <sheet>
                     <group name="Carnet">
                         <field name="active" invisible="1" />

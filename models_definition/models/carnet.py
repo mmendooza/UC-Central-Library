@@ -12,6 +12,8 @@ class Carnet(models.Model):
     active = fields.Boolean(
         default=True, help="Set active to false to hide the salary advance tag without removing it.")
 
+    state = fields.Selection(selection=[('activado', 'Activado'), ('desactivado', 'Desactivado')], string="Estado")
+
     # name = fields.Many2one(string='Usuario', comodel_name='internal.user', ondelete='restrict')
     carn_unid = fields.Char(string='Codigo de la unidad operador',
                             help='Codigo de la unidad operador')
@@ -74,3 +76,14 @@ class Carnet(models.Model):
     # carn_tiqu = fields.Float(string='Número de tiquet o factura')
     # date_last_card_modification = fields.Date(string='Fecha de la ultima modificación del carnet')
     # date_last_user_to_modify = fields.Date(string='Fecha de la ultima modificación del carnet')
+
+
+    def action_activate(self):
+        self.write({
+            'state': "activado"
+        })
+
+    def action_deactivate(self):
+        self.write({
+            'state': "desactivado"
+        })
