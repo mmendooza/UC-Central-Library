@@ -277,7 +277,7 @@
         <field name="model">sabi.user</field>
         <field name="arch" type="xml">
             <tree string="Usuario Sabi">
-                <!-- <field name="usua_codi"/> -->
+                <field name="usua_codi"/>
                 <field name="usua_cedu"/>
                 <field name="usua_nomb"/>
                 <!-- <field name="usua_tipo"/> -->

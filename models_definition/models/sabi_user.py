@@ -39,7 +39,7 @@ class SabiUser(models.Model):
 	)
 	usua_trab = fields.Char(string='Dirección de trabajo')
 	usua_habi = fields.Char(string='Dirección de Habitación')
-	usua_bloq = fields.Boolean(string='Usuario bloqueado', default=False)
+	usua_bloq = fields.Integer(string='Usuario bloqueado')
 	usua_carn = fields.Integer(string='Carnet')
 	usua_ano = fields.Integer(string='Año en curso')
 	usua_secc = fields.Char(string='Sección a la que pertence')
