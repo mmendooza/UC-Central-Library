@@ -9,7 +9,7 @@ class School(models.Model):
     escu_dire = fields.Char(string="Dirección")
     escu_codi = fields.Char(string="Código", required=True)
     escu_facu = fields.Many2one(comodel_name="faculty",string="Facultad", required=True)
-    escu_nume = fields.Char(string="Código de control de estudio", required=True)
+    escu_nume = fields.Char(string="Código de control de estudio", required=False)
     escu_auto = fields.Char(string="No sé escu_auto")
     escu_emai = fields.Char(string="Correo")
     escu_url = fields.Char(string="Sitio web")

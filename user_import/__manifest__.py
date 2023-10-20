@@ -9,7 +9,9 @@
 	'depends': ['models_definition', 'base_import'],
 	'data': [
         'security/ir.model.access.csv',
-        'views/user_import_views.xml'
-        ],
+        'views/user_import_views.xml',
+        'report/user_import_report.xml',
+        'report/user_import_templates.xml'
+	],
 	'license': 'Other proprietary',
 }

@@ -12,19 +12,19 @@
                         <field name="reason" widget="radio"/>
                     </group>
                     <group>
-                        <field name="faculty_id" options="{'no_edit': True, 'no_create': True, 'no_open': True}"/>
+                        <field name="faculty_id" options="{'no_edit': True, 'no_create': True, 'no_open': True}" required="1"/>
                         <field name="school_id" options="{'no_edit': True, 'no_create': True, 'no_open': True}"/>
                         <field name="file" /> 
                     </group>
                 </group>
                 <footer>
                     <div states="init">
-                        <button name="import_file" string="Importar" type="object" class="btn-primary"/>
-                        <button special="cancel" data-hotkey="z" string="Cancelar" class="btn-secondary"/>
+                        <button name="import_file" string="Importar" class="btn-primary" type="object"/>
+                        <button special="cancel" string="Cancelar" class="btn-secondary"/>
                     </div>
                     <div states="done">
-                        <!-- <button name="action_module_open" string="Reporte" type="object" class="btn-primary" data-hotkey="q"/> -->
-                        <button special="cancel" data-hotkey="z" string="Cerrar" class="btn-secondary"/>
+                        <button name="print_report" string="Reporte" class="btn-primary" type="object"/>
+                        <button name="reload" string="Cerrar" class="btn-secondary" type="object"/>
                     </div>
                 </footer>
             </form>
