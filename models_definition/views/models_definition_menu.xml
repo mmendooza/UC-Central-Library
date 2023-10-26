@@ -2,7 +2,7 @@
 <odoo>
 	<!-- TODO: ADD <web_icon="models_definition,static/src/img/.. -->
 
-	<menuitem id="models_definition_root" name="Modelos Personalizados" sequence="10">
+	<menuitem id="models_definition_root" name="Datos Maestros" sequence="4">
 		<menuitem id="menu_information_unit" name="Unidad de Información" action="open_information_unit_tree" sequence="1"/>
 
 		<!-- Configuration  -->
