@@ -111,7 +111,7 @@ class UserImport(models.TransientModel):
         # 3. Verificar la inclusion de columnas obligatorias
         mandatory_fields = ['usua_cedu', 'usua_facu', 'usua_escu']
         for field in mandatory_fields:
-            self._get_field_index(field, fields)
+            self._get_field_index(field, header)
         
         rows = remove_empty_rows(rows, header)
         
