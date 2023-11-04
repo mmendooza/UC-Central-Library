@@ -9,34 +9,13 @@ class SabiUser(models.Model):
 	usua_codi = fields.Integer(string='Identificador de línea') #TO DO: evaluar lo del auto incremento
 	usua_cedu = fields.Char(string='Cédula de identidad')
 	usua_nomb = fields.Char(string='Nombre y apellido')
-	usua_tipo = fields.Selection([
-		('student', 'Estudiante'),
-		('professor', 'Docente'),
-		('administrative', 'Personal administrativo'),
-		('laborer', 'Personal obrero')],
-		string='Tipo de usuario'
-	)
+	usua_tipo = fields.Char(string='Tipo de usuario')
 	usua_facu = fields.Char(string='Facultad')
 	usua_escu = fields.Char(string='Escuela')
 	usua_menc = fields.Char(string='Mención')
 	usua_unid = fields.Char(string='Unidad de Información')
-	usua_sexo = fields.Selection([
-		('m', 'M'),
-		('f', 'F'),],
-		string='Género'
-	)
-	usua_disc = fields.Selection([
-		('none', 'Ninguna'),
-		('hearing', 'Auditiva'),
-		('lenguage', 'De lenguaje'),
-		('physical', 'Física'),
-		('intellectual', 'Intelectual'),
-		('motor', 'Motríz'),
-		('multiple', 'Múltiple'),
-		('visual', 'Visual')],
-		string='Discapacidad',
-		default='none'
-	)
+	usua_sexo = fields.Char(string='Género')
+	usua_disc = fields.Char(string='Discapacidad')
 	usua_trab = fields.Char(string='Dirección de trabajo')
 	usua_habi = fields.Char(string='Dirección de Habitación')
 	usua_bloq = fields.Integer(string='Usuario bloqueado')
