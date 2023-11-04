@@ -330,8 +330,8 @@
                             <field name="usua_cedu"/>
                             <field name="usua_nomb"/>
                             <field name="usua_naci"/>
-                            <field name="usua_sexo"/>
-                            <field name="usua_disc"/>
+                            <!-- <field name="usua_sexo"/> -->
+                            <!-- <field name="usua_disc"/> -->
                             <field name="usua_edcv"/>
                         </group>
                         <group name="personal_information_right">
@@ -346,7 +346,7 @@
                     </group>
                     <group name="university_information">
                         <group name="university_information_left">
-                            <field name="usua_tipo"/>
+                            <!-- <field name="usua_tipo"/> -->
                             <field name="usua_facu"/>
                             <field name="usua_escu"/>
                             <field name="usua_menc"/>
