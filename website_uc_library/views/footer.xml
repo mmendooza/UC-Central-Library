@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="custom_footer" inherit_id="website.layout" name="Custom Footer">
+        <xpath expr="//footer" position="replace">
+            <footer>
+                <div class="container py-5 border-top">
+                    <div class="row">
+                        <div class="col-lg">
+                            <!-- <img class="footer-logo" src="/theme_yourhome/static/src/img/logo.png"/> -->
+                            <p class="py-0">
+                                Urb. Prebo, Av. Andrés Eloy Blanco c/c calle 137-20, Edificio Centro Escorpio, piso 2. Parroquia San José, Municipio Valencia, Edo. Carabobo. Venezuela 
+                                Código Postal 2001, Registro de Información Fiscal (RIF): G-20000041-4 
+                                Horario de Atención al Público de Lunes a Viernes de 8:00am a 2:30pm 
+                            </p>
+                            <p class="py-0">
+                                Copyright © 2023, Dirección Central de Biblioteca  
+                                bibliotecacentral@uc.edu.ve
+                                Diseñado por: TIC´s y Servicios de Biblioteca
+                            </p>
+                            <div class="s_share text-left no_icon_color" data-snippet="s_share" data-name="Social Media">
+                                <h5 class="s_share_title d-none">Follow us</h5>
+                                <a href="/website/social/facebook" class="s_share_facebook" target="_blank">
+                                    <i class="fa fa-facebook m-1 rounded-circle border"/>
+                                </a>
+                                <a href="https://twitter.com/i/flow/login?redirect_after_login=%2FBibCentralUC" class="s_share_twitter" target="_blank">
+                                    <i class="fa fa-twitter m-1 rounded-circle border"/>
+                                </a>
+                                <a href="" class="s_share_instagram" target="_blank">
+                                    <i class="fa fa-instagram m-1 rounded-circle border"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </xpath>
+    </template>
+</odoo>

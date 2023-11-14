@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="custom_homepage" inherit_id="website.homepage" name="Home">
+        <xpath expr="//t[@t-call='website.layout']" position="replace">
+            <t t-call="website.layout">
+                <t t-set="pageName" t-value="'library_homepage'"/>
+                <div id="wrap" class="oe_structure">
+                     <section class="s_cover parallax bg-black-50 pt96 pb96" data-scroll-background-ratio="1">
+                        <span class="s_parallax_bg oe_img_bg" style="background-image: url('website_uc_library/static/src/img/fondo_biblioteca.jpg');"/>
+                        <div class="container s_allow_columns">
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    <!-- <h3 class="h1">Sistema de carnetización</h3>
+                                    <br class="d-none d-lg-block"/><p>para usuarios internos de</p>
+                                    <h3 class="h1">bibliotecas en la Universidad de Carabobo.</h3>
+                                    <p>
+                                        <a href="" class="btn btn-primary mb-2 mt-3 rounded-circle px-5 font-weight-medium">Learn More</a>
+                                    </p> -->
+                                </div>
+                                <div class="col-lg-4 o_cc1 p-5 rounded">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="id_number">Cédula</label>
+                                            <input type="id_number" class="form-control" id="id_number"
+                                                   placeholder="26555444"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Contraseña</label>
+                                            <input type="password" class="form-control" id="password"
+                                                   placeholder="email@uc.edu.ve"/>
+                                        </div>
+
+                                        <div>
+                                            <div>
+                                                <a href="destination.html" target="_blank">
+                                                    <button id="login" type="login" class="btn btn-primary w-100 mt-3 font-weight-medium">Iniciar sesión</button>
+                                                </a>
+                                                <a href="">Recuperar contraseña</a>
+                                            </div>
+                                            <div>
+                                                <a href="" class="w-50 mt-3 font-weight-medium">Registrarse</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>

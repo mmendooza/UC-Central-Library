@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="UC_library_header" inherit_id="website.layout" name="UC library Header">
+        <xpath expr="//header" position="replace">
+            <header>
+                <nav class="navbar navbar-light bg-light">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">
+                        <img src="website_uc_library/static/src/img/logo_UC.png" alt="img" style="height:50px; width:auto"></img> 
+                        Sistema de carnetización en bibliotecas en la Universidad de Carabobo</a>
+                    </div>
+	            </nav>
+            </header>
+        </xpath>     
+    </template>
+</odoo>
+
