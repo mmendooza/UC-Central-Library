@@ -32,14 +32,15 @@
 
                                         <div>
                                             <div>
-                                                <a href="destination.html" target="_blank">
-                                                    <button id="login" type="login" class="btn btn-primary w-100 mt-3 font-weight-medium">Iniciar sesión</button>
+                                                <a href="/web/singup" target="_blank">
+                                                    <button id="login" type="submit" class="btn btn-primary w-100 mt-3 font-weight-medium">Iniciar sesión</button>
                                                 </a>
                                                 <!-- <a href="">Recuperar contraseña</a> -->
-                                                <a href="/web/reset_password/" class="btn btn-link" role="button">Recuperar contraseña</a>
+                                                <a t-attf-href="/web/reset_password?{{ keep_query() }}" class="btn btn-link" role="button">Recuperar contraseña</a>
                                             </div>
                                             <div>
-                                                <a href="" class="w-50 mt-3 font-weight-medium">Registrarse</a>
+                                                <!-- <a href="" class="w-50 mt-3 font-weight-medium">Registrarse</a> -->
+                                                <a t-attf-href="/web/signup?{{ keep_query() }}">Registrarse</a>
                                             </div>
                                         </div>
                                     </form>
