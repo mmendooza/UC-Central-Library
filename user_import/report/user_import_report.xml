@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_userimport" model="ir.actions.report">
+        <field name="name">Resumen de importacion de usuarios SABI</field>
+        <field name="model">user.import</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">user_import.report_userimport</field>
+        <field name="report_file">user_import.report_userimport</field>
+    </record>
+
+</odoo>

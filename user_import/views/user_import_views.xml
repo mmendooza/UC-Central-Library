@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_user_import" model="ir.ui.view">
+        <field name="name">Importar Usuarios</field>
+        <field name="model">user.import</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="state" invisible="1"/>
+                <group>
+                    <group>
+                        <field name="reason" widget="radio"/>
+                    </group>
+                    <group>
+                        <field name="faculty_id" options="{'no_edit': True, 'no_create': True, 'no_open': True}" required="1"/>
+                        <field name="school_id" options="{'no_edit': True, 'no_create': True, 'no_open': True}"/>
+                        <field name="file" /> 
+                    </group>
+                </group>
+                <footer>
+                    <div states="init">
+                        <button name="import_file" string="Importar" class="btn-primary" type="object"/>
+                        <button special="cancel" string="Cancelar" class="btn-secondary"/>
+                    </div>
+                    <div states="done" >
+                        <button name="print_report" string="Resumen" class="btn-primary mr-1" type="object" context="{'type': 'resume'}"/>
+                        <button name="print_report" string="Creados" class="btn-primary mr-1" type="object" context="{'type': 'created'}" invisible="context.get('hide_created_button')"/>
+                        <button name="print_report" string="Actualizados" class="btn-primary mr-1" type="object" context="{'type': 'updated'}" invisible="context.get('hide_updated_button')"/>
+                        <button name="print_report" string="Inactivados" class="btn-primary mr-1" type="object" context="{'type': 'inactive'}" invisible="context.get('hide_inactive_button')"/>
+                        <button name="print_report" string="No importados" class="btn-primary mr-1" type="object" context="{'type': 'excluded'}" invisible="context.get('hide_excluded_button')"/>
+                        <button name="reload" string="Cerrar" class="btn-secondary" type="object"/>
+                    </div>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_view_user_import" model="ir.actions.act_window">
+        <field name="name">Importar Usuarios</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">user.import</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem name="Importar Usuarios" 
+        action="action_view_user_import" 
+        id="user_import_menu" 
+        parent="models_definition.models_definition_root" 
+        sequence="3"/>
+
+</odoo>

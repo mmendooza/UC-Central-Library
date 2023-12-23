@@ -67,3 +67,93 @@ msgstr "Nombre"
 #: model_terms:ir.ui.view,arch_db:models_definition.information_unit_form
 msgid "Information Unit"
 msgstr "Unidad de Información"
+
+#. module: models_definition
+#: model:ir.ui.menu,name:models_definition.menu_municipality
+msgid "municipalities"
+msgstr "Municipios"
+
+#. module: models_definition
+#: model:ir.ui.menu,name:models_definition.menu_parish
+msgid "parishes"
+msgstr "Parroquias"
+
+#. module: models_definition
+#: model:ir.ui.menu,name:models_definition.menu_state
+msgid "Fed. States"
+msgstr "Provincias"
+
+#. module: models_definition
+#: model:ir.ui.menu,name:models_definition.menu_state
+msgid "Fed. States"
+msgstr "Provincias"
+
+#. module: models_definition
+#: model:ir.ui.menu,name:models_definition.configuration_root
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: models_definition
+#: model:ir.ui.menu,name:models_definition.menu_localisation
+msgid "Localization"
+msgstr "Localización"
+
+#. module: models_definition
+#: model:ir.model.fields,field_description:models_definition.field_information_unit__code
+msgid "Code"
+msgstr "Código"
+
+#. module: models_definition
+#: model:ir.model.fields,field_description:models_definition.field_information_unit__initials
+msgid "Initials"
+msgstr "Iniciales"
+
+#. module: models_definition
+#: model:ir.model.fields,field_description:models_definition.field_information_unit__library_name
+msgid "Library name"
+msgstr "Nombre de biblioteca"
+
+#. module: models_definition
+#: model:ir.model.fields,field_description:models_definition.field_information_unit__address
+msgid "Address"
+msgstr "Dirección"
+
+#. module: models_definition
+#: model:ir.model.fields,field_description:models_definition.field_information_unit__website
+msgid "Website Link"
+msgstr "Sitio web"
+
+#. module: models_definition
+#: model:ir.model.fields,field_description:models_definition.field_information_unit__faculty_id
+msgid "Faculty"
+msgstr "Facultad"
+
+#. module: models_definition
+#: model:ir.actions.act_window,name:models_definition.open_operator_tree
+#: model:ir.ui.menu,name:models_definition.menu_operator
+msgid "Operator"
+msgstr "Operador"
+
+#. module: models_definition
+#: model:ir.model.constraint,message:models_definition.constraint_res_users_code_uniq
+msgid "Operator code must be unique!"
+msgstr "El código del operador debe ser único!"
+
+#. module: models_definition
+#: model:ir.model.fields,field_description:models_definition.field_information_unit__code
+#: model:ir.model.fields,field_description:models_definition.field_res_users__code
+msgid "Code"
+msgstr "Código"
+
+#. module: models_definition
+#: model:ir.actions.act_window,name:models_definition.open_information_unit_tree
+#: model:ir.model.fields,field_description:models_definition.field_res_users__unit_id
+#: model:ir.ui.menu,name:models_definition.menu_information_unit
+msgid "Information Unit"
+msgstr "Unidad de información"
+
+
+#. module: models_definition
+#: model:ir.model.fields,field_description:models_definition.field_res_users__position
+msgid "Position"
+msgstr "Cargo"

@@ -2,8 +2,26 @@
 <odoo>
 	<!-- TODO: ADD <web_icon="models_definition,static/src/img/.. -->
 
-	<menuitem id="models_definition_root" name="Custom Models" sequence="10" >
-		<menuitem id="menu_information_unit" name="Information Unit" action="open_information_unit_tree" sequence="1"/>
+	<menuitem id="models_definition_root" name="Datos Maestros" sequence="4">
+		<menuitem id="menu_information_unit" name="Unidad de Información" action="open_information_unit_tree" sequence="1"/>
+
+		<!-- Configuration  -->
+		<menuitem id="configuration_root" name="Configuration" sequence="2">
+			<menuitem id="menu_localisation" name="Localization" sequence="1">
+				<menuitem id="menu_state" action="base.action_country_state" sequence="1"/>
+				<menuitem id="menu_municipality" action="territorial_pd.action_municipality" sequence="2"/>
+				<menuitem id="menu_parish" action="territorial_pd.action_parish" sequence="3" />
+			</menuitem>
+			<menuitem id="menu_operator" name="Operator" action="open_operator_tree" sequence="2"/>
+			<menuitem id="menu_sabi_user" name="Usuario SABI" action="models_definition.action_sabi_user" sequence="3"/>
+			<menuitem id="menu_university" name="Estructura universitaria" sequence="4">
+				<menuitem id="menu_faculty" name="Facultad" action="models_definition.action_faculty" sequence="1"/>
+				<menuitem id="menu_school" name="Escuela" action="models_definition.action_school" sequence="2"/>
+				<menuitem id="menu_mention" name="Mención" action="models_definition.action_mention" sequence="3" />
+				<menuitem id="menu_carnet" name="Carnet" action="models_definition.action_carnet" sequence="4" />
+			</menuitem>
+		</menuitem>
+
 	</menuitem>
 
 

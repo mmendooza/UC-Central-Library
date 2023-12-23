@@ -6,27 +6,374 @@
         <field name="model">information.unit</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="code" />
                 <field name="name"/>
+                <field name="library_name" />
+                <field name="faculty_id" />
+                <field name="initials" />
+                <field name="address" />
+                <field name="website" />
+                <field name="email" />
             </tree>
         </field>
     </record>
 
-    <record id="information_unit_form" model="ir.ui.view">
-        <field name="name">purchase.import.form</field>
-        <field name="model">information.unit</field>
+    <record id="operator_tree" model="ir.ui.view">
+        <field name="name">operator.tree</field>
+        <field name="model">res.users</field>
         <field name="arch" type="xml">
-            <form string="Information Unit">
+            <tree>
+                <field name="code" />
+                <field name="name"/>
+                <field name="login" />
+                <!-- <field name="password" /> -->
+                <field name="unit_id" />
+                <field name="position" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="operator_form" model="ir.ui.view">
+        <field name="name">operator.form</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_simple_form"/>
+        <field name="arch" type="xml">
+            <group name="phone_numbers" position="replace">
+                <group name="operator_fields">
+                    <field name="code"/>
+                    <field name="unit_id" />
+                    <field name="position" />
+                </group>
+            </group>
+        </field>
+    </record>
+
+    <!--Faculty-->
+    <record id="faculty_tree_view" model="ir.ui.view">
+        <field name="name">faculty.tree.view</field>
+        <field name="model">faculty</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="facu_auto"/>
+                <field name="facu_univ"/>
+                <field name="facu_codi"/>
+                <field name="facu_nomb"/>
+                <field name="facu_dire"/>
+                <field name="facu_emai"/>
+                <field name="facu_url"/>
+                <field name="facu_obse"/>
+                <field name="facu_logo"/>
+                <field name="facu_sigl"/>
+                <field name="facu_nume"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="faculty_form_view" model="ir.ui.view">
+        <field name="name">faculty.form.view</field>
+        <field name="model">faculty</field>
+        <field name="arch" type="xml">
+            <form string="Faultad">
                 <sheet>
-                    <div class="oe_title">
-                        <h1>
-                            <field name="name"/>
-                        </h1>
-                    </div>
-                    <group name="group_top">
-                        <group name="group_left">
+                    <group name="faculty">
+                        <group name="faculty_left">
+                            <field name="facu_nomb"/>
+                            <field name="facu_dire"/>
+                            <field name="facu_auto"/>
+                            <field name="facu_univ"/>
+                            <field name="facu_codi"/>
+                            <field name="facu_nume"/>                        
                         </group>
-                        <group name="group_right">
+                        <group name="faculty_right">
+                            <field name="facu_emai"/>
+                            <field name="facu_url"/>
+                            <field name="facu_obse"/>
+                            <field name="facu_logo"/>
+                            <field name="facu_sigl"/>
                         </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <!--School-->
+    <record id="school_tree_view" model="ir.ui.view">
+        <field name="name">school.tree.view</field>
+        <field name="model">school</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="escu_auto"/>
+                <field name="escu_codi"/>
+                <field name="escu_facu"/>
+                <field name="escu_nomb"/>
+                <field name="escu_nume"/>
+                <field name="escu_dire"/>
+                <field name="escu_emai"/>
+                <field name="escu_url"/>
+                <field name="escu_cnu"/>
+                <field name="escu_obse"/>
+                <field name="escu_logo"/>
+                <field name="escu_sigl"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="school_form_view" model="ir.ui.view">
+        <field name="name">school.form.view</field>
+        <field name="model">school</field>
+        <field name="arch" type="xml">
+            <form string="Escuela">
+                <sheet>
+                    <group name="school">
+                        <group name="school_left">
+                            <field name="escu_nomb"/>
+                            <field name="escu_dire"/>
+                            <field name="escu_auto"/>
+                            <field name="escu_facu"/>
+                            <field name="escu_codi"/>
+                            <field name="escu_nume"/>
+                        </group>
+                        <group name="school_right">
+                            <field name="escu_emai"/>
+                            <field name="escu_url"/>
+                            <field name="escu_cnu"/>
+                            <field name="escu_obse"/>
+                            <field name="escu_logo"/>
+                            <field name="escu_sigl"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Mention-->
+    <record id="mention_tree_view" model="ir.ui.view">
+        <field name="name">mention.tree.view</field>
+        <field name="model">mention</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="menc_escu"/>
+                <field name="menc_codi"/>
+                <field name="menc_nomb"/>
+                <field name="menc_obse"/>
+                <field name="menc_nume"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="mention_form_view" model="ir.ui.view">
+        <field name="name">mention.form.view</field>
+        <field name="model">mention</field>
+        <field name="arch" type="xml">
+            <form string="Mención">
+                <sheet>
+                    <group name="mention">
+                        <group name="mention_left">
+                            <field name="menc_nomb"/>
+                            <field name="menc_codi"/>
+                        <field name="menc_escu"/>
+                        </group>
+                        <group name="mention_right">
+                            <field name="menc_obse"/>
+                            <field name="menc_nume"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Carnets-->
+    <record id="carnet_tree_view" model="ir.ui.view">
+        <field name="name">carnet.tree.view</field>
+        <field name="model">carnet</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="active" invisible="1" />
+                <field name="carn_unid"/>
+                <field name="carn_oper"/>
+                <field name="carn_usua"/>
+                <field name="carn_unop"/>
+                <field name="carn_tipo"/>
+                <field name="carn_facu"/>
+                <field name="carn_escu"/>
+                <field name="carn_menc"/>
+                <field name="carn_anio"/>
+                <field name="carn_secc"/>
+                <field name="carn_venc"/>
+            
+                <field name="carn_nume"/>
+                <field name="card_stat"/>
+                <field name="card_moti"/>
+                <field name="card_mont"/>
+                <field name="card_etiq"/>
+                <field name="card_etvi"/>
+                <field name="card_tiqu"/>
+                <field name="carn_loca"/>
+                <field name="carn_crea"/>
+                <field name="carn_modi"/>
+                <field name="carn_umod"/>
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="carnet_form_view" model="ir.ui.view">
+        <field name="name">carnet.form.view</field>
+        <field name="model">carnet</field>
+        <field name="arch" type="xml">
+            <form string="Carnet">
+                <header>
+                    <button name="action_activate" type="object" string="Activar" />
+                    <button name="action_deactivate" type="object" string="Desactivar" />
+                    <field name="state" widget="statusbar" />
+                </header>
+                <sheet>
+                    <group name="Carnet">
+                        <field name="active" invisible="1" />
+                        <group name="carnet_left">
+                            <field name="carn_unid"/>
+                            <field name="carn_oper"/>
+                            <field name="carn_usua"/>
+                            <field name="carn_unop"/>
+                            <field name="carn_tipo"/>
+                            <field name="carn_facu"/>
+                            <field name="carn_escu"/>
+                            <field name="carn_menc"/>
+                            <field name="carn_anio"/>
+                            <field name="carn_secc"/>
+                            <field name="carn_venc"/>
+                        </group>
+
+                        <group name="carnet_right">
+                            <field name="carn_nume"/>
+                            <field name="card_stat"/>
+                            <field name="card_moti"/>
+                            <field name="card_mont"/>
+                            <field name="card_etiq"/>
+                            <field name="card_etvi"/>
+                            <field name="card_tiqu"/>
+                            <field name="carn_loca"/>
+                            <field name="carn_crea"/>
+                            <field name="carn_modi"/>
+                            <field name="carn_umod"/>
+                        </group>
+                    </group>
+                </sheet>
+
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="sabi_user_tree_view" model="ir.ui.view">
+        <field name="name">sabi.user.tree.view</field>
+        <field name="model">sabi.user</field>
+        <field name="arch" type="xml">
+            <tree string="Usuario Sabi">
+                <field name="usua_codi"/>
+                <field name="usua_cedu"/>
+                <field name="usua_nomb"/>
+                <!-- <field name="usua_tipo"/> -->
+                <field name="usua_facu"/>
+                <field name="usua_escu"/>
+                <field name="usua_menc"/>
+                <field name="usua_unid"/>
+                <!-- <field name="usua_sexo"/>
+                <field name="usua_disc"/>
+                <field name="usua_trab"/>
+                <field name="usua_habi"/> -->
+                <field name="usua_bloq"/>
+                <!-- <field name="usua_carn"/>
+                <field name="usua_ano"/>
+                <field name="usua_secc"/>
+                <field name="usua_foto"/>
+                <field name="usua_ucre"/>
+                <field name="usua_crea"/>
+                <field name="usua_umod"/>
+                <field name="usua_modi"/>
+                <field name="usua_obse"/> -->
+                <field name="usua_peri"/>
+                <!-- <field name="usua_edcv"/>
+                <field name="usua_cdac"/> -->
+                <field name="usua_nive"/>
+                <!-- <field name="usua_naci"/>
+                <field name="usua_anio"/>
+                <field name="usua_telf"/>
+                <field name="usua_dire"/>
+                <field name="usua_corr"/>
+                <field name="usua_etiq"/>
+                <field name="usua_inst"/>
+                <field name="usua_etvi"/>
+                <field name="usua_nada"/>
+                <field name="internal_user_id"/> 
+                <field name="usua_state"/>-->
+            </tree>
+        </field>
+    </record>
+
+    <record id="sabi_user_form_view" model="ir.ui.view">
+        <field name="name">sabi.user.form.view</field>
+        <field name="model">sabi.user</field>
+        <field name="arch" type="xml">
+            <form string="Usuario Sabi">
+                <sheet>
+                    <group name="personal_information">
+                        <group name="personal_information_left">
+                            <field name="usua_codi"/>
+                            <field name="usua_cedu"/>
+                            <field name="usua_nomb"/>
+                            <field name="usua_naci"/>
+                            <field name="usua_sexo"/>
+                            <field name="usua_disc"/>
+                            <field name="usua_edcv"/>
+                        </group>
+                        <group name="personal_information_right">
+                            <field name="usua_trab"/>
+                            <field name="usua_habi"/>
+                            <field name="usua_foto"/>
+                            <field name="usua_telf"/>
+                            <field name="usua_dire"/>
+                            <field name="usua_corr"/>
+                            <field name="usua_nada"/>
+                        </group>
+                    </group>
+                    <group name="university_information">
+                        <group name="university_information_left">
+                            <field name="usua_tipo"/>
+                            <field name="usua_facu"/>
+                            <field name="usua_escu"/>
+                            <field name="usua_menc"/>
+                            <field name="usua_unid"/>
+                            <field name="usua_bloq"/>
+                            <field name="usua_carn"/>
+                            <field name="usua_ano"/>
+                        </group>
+                        <group name="university_information_right">
+                            <field name="usua_secc"/>
+                            <field name="usua_obse"/>
+                            <field name="usua_obse"/>
+                            <field name="usua_cdac"/>
+                            <field name="usua_nive"/>
+                            <field name="usua_anio"/>
+                            <field name="usua_etiq"/>
+                            <field name="usua_inst"/>
+                            <field name="usua_etvi"/>  
+                            <field name="internal_user_id"/>
+                            <field name="usua_state"/>
+                        </group>
+                    </group>
+                    <group name="register_information">
+                        <field name="usua_ucre"/>
+                        <field name="usua_crea"/>
+                        <field name="usua_umod"/>
+                        <field name="usua_modi"/>
                     </group>
                 </sheet>
             </form>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_userimport">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <t t-if="type == 'resume'">
+                        <h3 class="mb-5">Resumen de Importación de Usuarios SABI</h3>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <div style="display: inline-block; font-weight:bold; vertical-align: top; padding-right: 10px;">
+                                        Motivo:
+                                    </div>
+                                    <div style="display: inline-block;" t-esc="get_reason"/>
+                                </div>
+                                <div class="mb-3">
+                                    <div style="display: inline-block; font-weight:bold; vertical-align: top; padding-right: 10px;">
+                                        Facultad:
+                                    </div>
+                                    <div style="display: inline-block; width: 70%" t-esc="get_faculty"/>
+                                </div>
+                                <div class="mb-3">
+                                    <div style="display: inline-block; font-weight:bold; vertical-align: top; padding-right: 10px;">
+                                        Usuarios antes de importar:
+                                    </div>
+                                    <div style="display: inline-block;" t-esc="get_user_count_before_import"/>
+                                </div>
+                                <div class="mb-3">
+                                    <div style="display: inline-block; font-weight:bold; vertical-align: top; padding-right: 10px;">
+                                        Usuarios después de importar:
+                                    </div>
+                                    <div style="display: inline-block; " t-esc="get_user_count_after_import"/>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <div style="display: inline-block; font-weight:bold; vertical-align: top; padding-right: 10px;">
+                                        Fecha:
+                                    </div>
+                                    <div style="display: inline-block;" t-esc="get_datetime"/>
+                                </div>
+                                <div class="mb-3">
+                                    <div style="display: inline-block; font-weight:bold; vertical-align: top; padding-right: 10px;">
+                                        Escuela:
+                                    </div>
+                                    <div style="display: inline-block;" t-esc="get_school"/>
+                                </div>
+                                <div class="mb-3">
+                                    <div style="display: inline-block; font-weight:bold; vertical-align: top; padding-right: 10px;">
+                                        Usuarios en archivo de importación:
+                                    </div>
+                                    <div style="display: inline-block;" t-esc="get_users_count_in_importfile"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                    <t t-elif="type == 'created'">
+                        <div class="row">
+                            <div class="col-12">
+                                <h6>
+                                    <strong style="padding-right: 10px;">Usuarios creados:</strong>  
+                                    <span t-esc="get_created_users_count"/>
+                                </h6>
+                                <br/>
+                                <table class="table table-sm table-bordered border-dark" >
+                                    <thead>
+                                        <tr>
+                                            <th style="width:20%;" scope="col">Cédula</th>
+                                            <th scope="col">Nombre</th>
+                                            <th style="width:10%;" scope="col">Facultad</th>
+                                            <th style="width:10%;" scope="col">Escuela</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="background-color: #cfe2ff" class="text-center" 
+                                            t-foreach="get_created_users_data.items()" t-as="user">
+                                            <td><t t-esc="user[0]"/></td>
+                                            <td><t t-esc="user[1]['usua_nomb']"/></td>
+                                            <td><t t-esc="user[1]['usua_facu']"/></td>
+                                            <td><t t-esc="user[1]['usua_escu']"/></td>
+                                        </tr>
+                                    </tbody>
+                                </table>                        
+                            </div>                        
+                        </div>
+
+                    </t>
+                    <t t-elif="type == 'updated'">
+                        <div class="row">
+                            <div class="col-12">
+                                <h6>
+                                    <strong style="padding-right: 10px;">Usuarios actualizados:</strong>  
+                                    <span t-esc="get_updated_users_count"/>
+                                </h6>
+                                <br/>
+                                <table class="table table-sm table-bordered border-dark" >
+                                    <thead>
+                                        <tr>
+                                            <th style="width:20%;" scope="col">Cédula</th>
+                                            <th scope="col">Nombre</th>
+                                            <th style="width:10%;" scope="col">Facultad</th>
+                                            <th style="width:10%;" scope="col">Escuela</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="background-color: #c3e6cb;" class="text-center"
+                                            t-foreach="get_updated_users_data.items()" t-as="user">
+                                            <td><t t-esc="user[0]"/></td>
+                                            <td><t t-esc="user[1]['usua_nomb']"/></td>
+                                            <td><t t-esc="user[1]['usua_facu']"/></td>
+                                            <td><t t-esc="user[1]['usua_escu']"/></td>
+                                        </tr>
+                                    </tbody>
+                                </table>                        
+                            </div>                        
+                        </div>
+                    </t>
+                    <t t-elif="type == 'inactive'">
+                        <div class="row">
+                            <div class="col-12">
+                                <h6>
+                                    <strong style="padding-right: 10px;">Usuarios desactivados:</strong>
+                                    <span t-esc="get_inactive_users_count"/> 
+                                </h6>
+                                <br/>
+                                <table class="table table-sm table-bordered border-dark" >
+                                    <thead>
+                                        <tr>
+                                            <th style="width:20%;" scope="col">Cédula</th>
+                                            <th scope="col">Nombre</th>
+                                            <th style="width:25%;" scope="col">Motivo</th>
+                                            <th style="width:10%;" scope="col">Facultad</th>
+                                            <th style="width:10%;" scope="col">Escuela</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="background-color: #ffeeba" class="text-center" 
+                                            t-foreach="get_inactive_users_data.items()" t-as="user">
+                                            <td><t t-esc="user[0]"/></td>
+                                            <td><t t-esc="user[1]['usua_nomb']"/></td>
+                                            <td><t t-esc="get_inactive_reason"/></td>
+                                            <td><t t-esc="user[1]['usua_facu']"/></td>
+                                            <td><t t-esc="user[1]['usua_escu']"/></td>
+                                        </tr>
+                                    </tbody>
+                                </table>                        
+                            </div>                        
+                        </div>       
+                    </t>
+                    <t t-elif="type == 'excluded'">
+                        <div class="row">
+                            <div class="col-12">
+                                <h6>
+                                    <strong style="padding-right: 10px;">Usuarios no importados:</strong> 
+                                    <span t-esc="get_excluded_users_count"/>
+                                </h6>
+                                <br/>
+                                <table class="table table-sm table-bordered border-dark" >
+                                    <thead>
+                                        <tr>
+                                            <th style="width:20%;" scope="col">Cédula</th>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Motivo</th>
+                                            <th scope="col">Facultad</th>
+                                            <th scope="col">Escuela</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="get_excluded_users_data.items()" t-as="excluded_item">
+                                            <tr style="background-color: #f5c6cb" class="text-center" 
+                                                t-foreach="excluded_item[1].items()" t-as="user">
+                                                <td><t t-esc="user[0]"/></td>
+                                                <td><t t-esc="user[1]['usua_nomb']"/></td>
+                                                <td><t t-esc="excluded_item[0]"/></td>
+                                                <td><t t-esc="user[1].get('usua_facu', ' ')"/></td>
+                                                <td><t t-esc="user[1].get('usua_escu', ' ')"/></td>
+                                            </tr>                                            
+                                        </t>
+                                    </tbody>
+                                </table>                        
+                            </div>                        
+                        </div>                          
+                    </t>
+                    <t t-if="type != 'resume'">
+                        <div style="margin: 20px; text-align:center;">
+                            <div style="display: inline-block; width: 150px; margin-bottom: 10px;">
+                                <div style="background-color: #cfe2ff;
+                                    width: 30px;
+                                    height: 30px;
+                                    display: inline-block;
+                                    margin-right: 10px;
+                                    border: 1px solid #000">
+                                </div>
+                                Creado
+                            </div>
+                            <div style="display: inline-block; width: 150px; margin-bottom: 10px;">
+                                <div style="background-color: #c3e6cb;
+                                    width: 30px;
+                                    height: 30px;
+                                    display: inline-block;
+                                    margin-right: 10px;
+                                    border: 1px solid #000">
+                                </div>
+                                Actualizado
+                            </div>
+                            <div style="display: inline-block; width: 150px; margin-bottom: 10px;">
+                                <div style="background-color: #ffeeba;
+                                    width: 30px;
+                                    height: 30px;
+                                    display: inline-block;
+                                    margin-right: 10px;
+                                    border: 1px solid #000">
+                                </div>
+                                Inactivo
+                            </div>
+                            <div style="display: inline-block; width: 150px; margin-bottom: 10px;">
+                                <div style="background-color: #f5c6cb;
+                                    width: 30px;
+                                    height: 30px;
+                                    display: inline-block;
+                                    margin-right: 10px;
+                                    border: 1px solid #000">
+                                </div>
+                                No Importado
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
