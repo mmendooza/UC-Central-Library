@@ -54,7 +54,7 @@ class UserImportReport(models.AbstractModel):
             for k,v in reasons.get('reason').items():
                 if v:
                     reason_display_name = next(filter(lambda x: x[0] == k, IMPORT_EXCLUSION_REASON))[1]
-                    if k != IMPORT_EXCLUSION_REASON[2][0]: 
+                    if k != IMPORT_EXCLUSION_REASON[3][0]: 
                         users[reason_display_name] = self._get_users_data(v)
                     else:
                         # Tomar datos del archivo
@@ -67,43 +67,66 @@ class UserImportReport(models.AbstractModel):
                             }
         return users
     
+    def _get_inactive_reason(self, reason):
+
+        return reason == 'retiro' and 'Retiro' or reason == 'egreso' and 'Egreso' or 'No incluido en el archivo'
+    
     @api.model
     def _get_report_values(self, docids, data=None):
         if not data.get('form'):
             raise UserError("Falta el contenido del formulario, este informe no se puede imprimir.")
 
         import_report = self.env['ir.actions.report']._get_report_from_name('user_import.report_userimport')
-
-        return {
+        doc_type = self.env.context.get('type')
+        report_values_dict = {
             'doc_model': import_report.model,
-            'get_reason': self._get_reason(data['form']['reason']),
-            'get_reason_technical_name': data['form']['reason'],
-            'get_datetime': self._get_datetime(data['form']['write_date']),
-            'get_faculty': data['form']['faculty_id'] and data['form']['faculty_id'][1],
-            'get_school': data['form']['school_id'] and data['form']['school_id'][1] or 'No seleccionada',
-            'get_user_count_before_import': data['import_results']['user_count_before_import'],
-            'get_users_count_in_importfile': len(data['import_results']['file_data']['users_data']),
-            'get_user_count_after_import': data['import_results']['user_count_after_import'],
-            'get_created_users_count': 
-                len(data['import_results'].get('created_users', [])),
-            'get_created_users_data': 
-                self._get_users_data(data['import_results'].get('created_users'),
-                    data['form']['reason']),
-            'get_updated_users_count': 
-                len(data['import_results'].get('updated_users', [])),
-            'get_updated_users_data': 
-                self._get_users_data(list(data['import_results'].get('updated_users', dict()).keys()),
-                    data['form']['reason']),
-            'get_inactive_users_count': 
-                len(data['import_results'].get('inactive_users', [])),
-            'get_inactive_users_data': 
-                self._get_users_data(data['import_results'].get('inactive_users', []),
-                    data['form']['reason']),
-            'get_excluded_users_count': 
-                len(data['import_results'].get('excluded_users', dict()).get('cedu')),
-            'get_excluded_users_data': 
-                self._get_excluded_users(
-                    data['import_results'].get('excluded_users', dict()), 
-                    data['import_results']['file_data']
-                )
+            'type': doc_type,
         }
+
+        if doc_type == 'resume':
+            report_values_dict.update({
+                'get_reason': self._get_reason(data['form']['reason']),
+                'get_reason_technical_name': data['form']['reason'],
+                'get_datetime': self._get_datetime(data['form']['write_date']),
+                'get_faculty': data['form']['faculty_id'] and data['form']['faculty_id'][1],
+                'get_school': data['form']['school_id'] and data['form']['school_id'][1] or 'No seleccionada',
+                'get_user_count_before_import': data['import_results']['user_count_before_import'],
+                'get_users_count_in_importfile': len(data['import_results']['file_data']['users_data']),
+                'get_user_count_after_import': data['import_results']['user_count_after_import'],
+            })
+        elif doc_type == 'created':
+            report_values_dict.update({
+                'get_created_users_count': len(data['import_results'].get('created_users', [])),
+                'get_created_users_data': 
+                    self._get_users_data(data['import_results'].get('created_users'),
+                    data['form']['reason']),
+            })
+        elif doc_type == 'updated':
+            report_values_dict.update({
+                'get_updated_users_count': len(data['import_results'].get('updated_users', [])),
+                'get_updated_users_data': self._get_users_data(
+                    list(data['import_results'].get('updated_users', dict()).keys()),
+                    data['form']['reason']
+                ),
+            })
+        elif doc_type == 'inactive':
+            report_values_dict.update({
+                'get_inactive_users_count': len(data['import_results'].get('inactive_users', [])),
+                'get_inactive_users_data': self._get_users_data(
+                    data['import_results'].get('inactive_users', []),
+                    data['form']['reason']
+                ),
+                'get_inactive_reason': self._get_inactive_reason(data['form']['reason']),
+            })
+        elif doc_type == 'excluded':
+            report_values_dict.update({
+                'get_excluded_users_count': 
+                    len(data['import_results'].get('excluded_users', dict()).get('cedu')),
+                'get_excluded_users_data': 
+                    self._get_excluded_users(
+                        data['import_results'].get('excluded_users', dict()), 
+                        data['import_results']['file_data']
+                    )
+            })
+            
+        return report_values_dict

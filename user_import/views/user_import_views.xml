@@ -22,8 +22,12 @@
                         <button name="import_file" string="Importar" class="btn-primary" type="object"/>
                         <button special="cancel" string="Cancelar" class="btn-secondary"/>
                     </div>
-                    <div states="done">
-                        <button name="print_report" string="Reporte" class="btn-primary" type="object"/>
+                    <div states="done" >
+                        <button name="print_report" string="Resumen" class="btn-primary mr-1" type="object" context="{'type': 'resume'}"/>
+                        <button name="print_report" string="Creados" class="btn-primary mr-1" type="object" context="{'type': 'created'}" invisible="context.get('hide_created_button')"/>
+                        <button name="print_report" string="Actualizados" class="btn-primary mr-1" type="object" context="{'type': 'updated'}" invisible="context.get('hide_updated_button')"/>
+                        <button name="print_report" string="Inactivados" class="btn-primary mr-1" type="object" context="{'type': 'inactive'}" invisible="context.get('hide_inactive_button')"/>
+                        <button name="print_report" string="No importados" class="btn-primary mr-1" type="object" context="{'type': 'excluded'}" invisible="context.get('hide_excluded_button')"/>
                         <button name="reload" string="Cerrar" class="btn-secondary" type="object"/>
                     </div>
                 </footer>
