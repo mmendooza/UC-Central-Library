@@ -17,7 +17,7 @@ msgstr ""
 #: model:ir.actions.act_window,name:models_definition.models_definition_action
 #: model:ir.ui.menu,name:models_definition.models_definition_root
 msgid "Custom Models"
-msgstr "Modelos Personalizados"
+msgstr "Datos maestros"
 
 #. module: models_definition
 #: model:ir.model.fields,field_description:models_definition.field_information_unit__display_name
